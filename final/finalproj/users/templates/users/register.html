@@ -1,0 +1,10 @@
+{% extends 'items/base.html' %}
+
+{% block body %}
+    <form method="POST">
+        {% csrf_token %}
+        {{ form }}
+        <button class="btn btn-success" type="submit">Register</button>
+        <p>Already have an account? <a href="{% url 'login' %}">Sign In</a></p>
+    </form>
+{% endblock %}

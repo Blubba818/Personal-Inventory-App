@@ -1,0 +1,13 @@
+{% extends 'items/base.html' %}
+
+{% block body %}
+    <div class="row">
+        <form method="POST" enctype="multipart/form-data">
+            <h2>Add/Edit Location</h2>
+            <a href="{% url 'items:create_room' %}" class="btn btn-primary"><i class="fas fa-plus"></i> Add Room</a>
+            {% csrf_token %}
+            {{ form }}
+            <button class="btn btn-primary" type="submit">Save</button>
+        </form>
+    </div>
+{% endblock %}

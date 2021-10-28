@@ -1,0 +1,24 @@
+{% extends 'items/base.html' %}
+
+{% block body %}
+    <div class="container">
+        <div class="row">
+            {% if item.created_by == user %}
+            <div class="col-md-6">
+                <img src="../media/{{ item.image }}" height="300px" alt="">
+            </div>
+            <div class="col-md-6">
+                <h1>{{ item.name }}</h1>
+                <h4>{{ item.description }}</h4>
+                <p>Quantity: {{ item.quantity }}</p>
+                <p>Room: {{ item.location_id.room_id }}</p>
+                <p>Location: {{ item.location_id }}</p>
+                <a href="{% url 'items:update_item' item.id %}" class="btn btn-primary"><i class="fas fa-edit"></i> Edit</a>
+                <a href="{% url 'items:delete_item' item.id %}" class="btn btn-danger"><i class="fas fa-trash-alt"></i> Delete</a>
+            </div>
+            {% else %}
+            <h1>You are not authorized to view this item!</h1>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}
