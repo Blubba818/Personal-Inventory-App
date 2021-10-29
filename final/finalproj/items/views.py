@@ -7,10 +7,32 @@ from .forms import ItemForm, LocationForm, RoomForm
 
 def index(request):
     item_list = Item.objects.all()
+    location_list = Location.objects.all()
+    room_list = Room.objects.all()
     context = {
         'item_list': item_list,
+        'location_list': location_list,
+        'room_list': room_list
     }
     return render(request, 'items/index.html', context)
+
+
+def locations(request):
+    location_list = Location.objects.all()
+    room_list = Room.objects.all()
+    context = {
+        'location_list': location_list,
+        'room_list': room_list
+    }
+    return render(request, 'items/locations.html', context)
+
+
+def rooms(request):
+    room_list = Room.objects.all().order_by('name')
+    context = {
+        'room_list': room_list,
+    }
+    return render(request, 'items/rooms.html', context)
 
 
 def index_sorted(request, sort_by):
@@ -19,6 +41,14 @@ def index_sorted(request, sort_by):
         'item_list': item_list,
     }
     return render(request, 'items/index.html', context)
+
+
+def locations_sorted(request, sort_by):
+    location_list = Location.objects.all().order_by(sort_by)
+    context = {
+        'location_list': location_list,
+    }
+    return render(request, 'items/locations.html', context)
 
 
 def item_detail(request, item_id):
@@ -62,7 +92,7 @@ def create_location(request):
     if form.is_valid():
         form.instance.created_by = request.user
         form.save()
-        return redirect('items:index')
+        return redirect('items:locations')
 
     return render(request, 'items/location-form.html', {'form': form})
 
@@ -73,7 +103,7 @@ def create_room(request):
     if form.is_valid():
         form.instance.created_by = request.user
         form.save()
-        return redirect('items:index')
+        return redirect('items:rooms')
 
     return render(request, 'items/room-form.html', {'form': form})
 
@@ -95,7 +125,7 @@ def update_location(request, id):
 
     if form.is_valid():
         form.save()
-        return redirect('items:index')
+        return redirect('items:locations')
 
     return render(request, 'items/location-form.html', {'form': form, 'location': location})
 
@@ -106,7 +136,7 @@ def update_room(request, id):
 
     if form.is_valid():
         form.save()
-        return redirect('items:index')
+        return redirect('items:rooms')
 
     return render(request, 'items/room-form.html', {'form': form, 'room': room})
 

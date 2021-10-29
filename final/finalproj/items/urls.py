@@ -4,7 +4,10 @@ from django.urls import path
 app_name = 'items'
 urlpatterns = [
     path('', views.index, name='index'),
+    path('location', views.locations, name='locations'),
+    path('room', views.rooms, name='rooms'),
     path('sort/<sort_by>', views.index_sorted, name='index_sorted'),
+    path('location/sort/<sort_by>', views.locations_sorted, name='locations_sorted'),
     path('<int:item_id>', views.item_detail, name='item_detail'),
     path('location/<int:item_id>', views.location_detail, name='location_detail'),
     path('room/<int:item_id>', views.room_detail, name='room_detail'),

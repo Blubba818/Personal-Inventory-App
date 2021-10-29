@@ -1,6 +1,6 @@
 body {
-    background-color: #fafaff !important;
-    background: linear-gradient(to right, #fafaff, #ffffff, #fafaff);
+    background: linear-gradient(rgba(255,255,255,.9), rgba(255,255,255,.25), rgba(255,255,255,.9)), url("../../media/images/bg.png") no-repeat center fixed;
+    background-size: cover;
 }
 
 h1, h2, h3, .navbar-brand, label, .btn, .navbar a {
@@ -15,8 +15,12 @@ h4, h5, h6, p, form {
     font-family: 'Roboto', Arial, helvetica, sans-serif;
 }
 
+h4, h5, h6, p {
+    font-weight: bold;
+}
+
 nav {
-    background: linear-gradient(to right, #000066, #000080, #000066);
+    background: linear-gradient(to right, #e78b38, #f5ce89, #f1a34f);
     width: 100%;
     margin: 0 auto;
 }
@@ -26,17 +30,42 @@ nav {
 }
 
 .navbar a:hover {
-    color: #e6e6e6 !important;
+    opacity: .75 !important;
 }
 
 .navbar a:active {
-    color: #cccccc !important;
+    opacity: .5 !important;
 }
 
 .container {
     width: 80%;
     margin: 0 auto;
-    color: #00004d;
+    color: white;
+}
+
+.page-info {
+    color: #00664d;
+    margin-top: 1.5rem;
+}
+
+img {
+    box-shadow: 2px 2px 2px rgba(0,51,38,.25);
+}
+
+.item-link {
+    color: white;
+}
+
+.item-link:hover {
+    color: rgba(255,255,255,.75) !important;
+}
+
+.item-link:active {
+    color: rgba(255,255,255,.5) !important;
+}
+
+.container a:hover {
+    text-decoration: none;
 }
 
 .row {
@@ -46,7 +75,7 @@ nav {
     display: flex;
     justify-content: space-around;
     flex-direction: row;
-    background-color: #eeeeff;
+    background: linear-gradient(to right, rgba(0,204,153,.35), rgba(0,204,153,.75), rgba(0,204,153,.8), rgba(0,204,153,.75), rgba(0,204,153,.35));
     border-radius: 10px;
 }
 
@@ -60,22 +89,64 @@ form {
     width: 50%;
 }
 
+input {
+    color: #00664d;
+}
+
+input[type="file"] {
+    color: white;
+}
+
 form a {
-    color: #00004d !important;
+    color: white !important;
 }
 
 form a:hover {
     text-decoration: none;
-    color: #0000b3 !important;
+    color: rgba(255,255,255,.75) !important;
 }
 
 form a:active {
-    color: #0000e6 !important;
+    color: rgba(255,255,255,.5) !important;
 }
 
 form button {
     margin-top: 2rem;
     width: 50%;
+}
+
+::-webkit-file-upload-button {
+    background-color: #f1a34f;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    padding: .5rem 1rem;
+    box-shadow: 2px 2px 2px rgba(0,51,38,.25);
+}
+
+::-webkit-file-upload-button:hover {
+    background-color: #ee902b;
+}
+
+::-webkit-file-upload-button:active {
+    background-color: #d47611;
+}
+
+::-ms-browse {
+    background-color: #f1a34f;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    padding: .5rem 1rem;
+    box-shadow: 2px 2px 2px rgba(0,51,38,.25);
+}
+
+::-ms-browse:hover {
+    background-color: #ee902b;
+}
+
+::-ms-browse:active {
+    background-color: #d47611;
 }
 
 label {
@@ -89,23 +160,26 @@ input, select {
 
 .btn {
     border: none !important;
+    box-shadow: 2px 2px 2px rgba(0,51,38,.25);
 }
 
 .btn-primary {
-    background-color: #1a1aff !important;
+    background-color: #00ace6 !important;
     color: white !important;
 }
 
 .btn-primary:hover {
-    background-color: #0000e6 !important;
+    background-color: #0099cc !important;
+    color: white !important;
 }
 
 .btn-primary:active {
-    background-color: #0000b3 !important;
+    background-color: #007399 !important;
+    color: white !important;
 }
 
 .btn-success {
-    background-color: #00cc99 !important;
+    background-color: #00b386 !important;
     color: white !important;
 }
 
@@ -120,16 +194,33 @@ input, select {
 }
 
 .btn-danger {
-    background-color: #ff6672 !important;
+    background-color: #ff5b38 !important;
     color: white !important;
 }
 
 .btn-danger:hover {
-    background-color: #ff4d5b !important;
+    background-color: #ff2f00 !important;
+    color: white !important;
 }
 
 .btn-danger:active {
-    background-color: #ff1a2d !important;
+    background-color: #cc2500 !important;
+    color: white !important;
+}
+
+.btn-warning {
+    background-color: #f1a34f !important;
+    color: white !important;
+}
+
+.btn-warning:hover {
+    background-color: #ee902b !important;
+    color: white !important;
+}
+
+.btn-warning:active {
+    background-color: #d47611 !important;
+    color: white !important;
 }
 
 #delete_form .btn {

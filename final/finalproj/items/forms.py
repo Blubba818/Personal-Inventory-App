@@ -3,6 +3,7 @@ from .models import Item, Room, Location
 
 
 class ItemForm(forms.ModelForm):
+
     class Meta:
         model = Item
         fields = ['name', 'image', 'description', 'quantity', 'location_id']
@@ -16,19 +17,23 @@ class ItemForm(forms.ModelForm):
 
 
 class LocationForm(forms.ModelForm):
+
     class Meta:
         model = Location
-        fields = ['name', 'room_id']
+        fields = ['name', 'image', 'room_id']
         labels = {
             'name': 'Location Name',
+            'image': 'Location Image',
             'room_id': 'Room'
         }
 
 
 class RoomForm(forms.ModelForm):
+
     class Meta:
         model = Room
-        fields = ['name']
+        fields = ['name', 'image']
         labels = {
-            'name': 'Room Name'
+            'name': 'Room Name',
+            'image': 'Room Image'
         }

@@ -11,6 +11,7 @@ class Room(models.Model):
         return self.name
 
     name = models.CharField(max_length=200)
+    image = models.ImageField(upload_to='images/', default='images/rooms.jpg')
     created_by = models.ForeignKey(User, on_delete=models.CASCADE)
 
 
@@ -20,6 +21,7 @@ class Location(models.Model):
         return self.name
 
     name = models.CharField(max_length=200)
+    image = models.ImageField(upload_to='images/', default='images/closet.jpg')
     room_id = models.ForeignKey(Room, on_delete=models.CASCADE)
     created_by = models.ForeignKey(User, on_delete=models.CASCADE)
 
@@ -39,13 +41,3 @@ class Item(models.Model):
 
     def get_absolute_url(self):
         return reverse("items:item-detail", kwargs={"pk": self.pk})
-
-
-#class ItemQuantity(models.Model):
-
-    #def __str__(self):
-        #return self.quantity
-
-    #quantity = models.IntegerField
-    #item_id = models.ForeignKey(Item, on_delete=models.CASCADE)
-    #location_id = models.ForeignKey(Location, on_delete=models.CASCADE)

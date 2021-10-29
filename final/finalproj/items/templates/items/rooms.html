@@ -1,0 +1,27 @@
+{% extends 'items/base.html' %}
+
+{% block body %}
+    <h2 class="page-info">Your Rooms</h2>
+    <h5 class="page-info">Here's where you can manage your rooms!</h5>
+
+    <div class="row" id="button_row">
+        <a href="{% url 'items:index' %}" class="btn btn-primary">See Items</a>
+        <a href="{% url 'items:locations' %}" class="btn btn-primary">See Locations</a>
+        <a href="{% url 'items:create_room' %}" class="btn btn-warning"><i class="fas fa-plus"></i> Add Room</a>
+    </div>
+
+    {% for room in room_list %}
+        {% if room.created_by == user %}
+            <a href="{% url 'items:room_detail' room.id %}" class="item-link">
+                <div class="row">
+                    <div class="col-md-3">
+                        <img src="../../media/{{ room.image }}" height="150px" alt="">
+                    </div>
+                    <div class="col-md-4">
+                        <h3>{{ room.name }}</h3>
+                    </div>
+                </div>
+            </a>
+        {% endif %}
+    {% endfor %}
+{% endblock %}
