@@ -16,7 +16,7 @@
             <a href="{% url 'items:room_detail' room.id %}" class="item-link">
                 <div class="row">
                     <div class="col-md-3">
-                        <img src="../../media/{{ room.image }}" height="150px" alt="">
+                        <img src="{{ room.image.url }}" height="150px" alt="">
                     </div>
                     <div class="col-md-4">
                         <h3>{{ room.name }}</h3>

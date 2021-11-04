@@ -24,7 +24,7 @@
             <a href="{% url 'items:item_detail' item.id %}" class="item-link">
                 <div class="row">
                     <div class="col-md-3">
-                        <img src="../../media/{{ item.image }}" height="150px" alt="">
+                        <img src="{{ item.image.url }}" height="150px" alt="">
                     </div>
                     <div class="col-md-4">
                         <h3>{{ item.name }}</h3>
