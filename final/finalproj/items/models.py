@@ -12,7 +12,7 @@ class Room(models.Model):
         return self.name
 
     name = models.CharField(max_length=200, unique=True)
-    image = models.ImageField(upload_to='./', default='images/rooms.jpg')
+    image = models.ImageField(upload_to='images/', default='images/rooms.jpg')
     description = models.CharField(max_length=1000, blank=True)
     created_by = models.ForeignKey(User, on_delete=models.CASCADE)
 
@@ -23,7 +23,7 @@ class Location(models.Model):
         return self.name
 
     name = models.CharField(max_length=200, unique=True)
-    image = models.ImageField(upload_to='./', default='images/closet.jpg')
+    image = models.ImageField(upload_to='images/', default='images/closet.jpg')
     description = models.CharField(max_length=1000, blank=True)
     room_id = models.ForeignKey(Room, on_delete=models.CASCADE)
     created_by = models.ForeignKey(User, on_delete=models.CASCADE)
@@ -35,7 +35,7 @@ class Item(models.Model):
         return self.name
 
     name = models.CharField(max_length=200)
-    image = models.ImageField(upload_to='./', default='images/inventory.jpg')
+    image = models.ImageField(upload_to='images/', default='images/inventory.jpg')
     description = models.CharField(max_length=1000, blank=True)
     quantity = models.PositiveIntegerField(default=1, validators=[MinValueValidator(1)])
     location_id = models.ForeignKey(Location, on_delete=models.CASCADE)
