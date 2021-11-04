@@ -2,12 +2,13 @@
 
 {% block body %}
     <h2 class="page-info">Your Rooms</h2>
-    <h5 class="page-info">Here's where you can manage your rooms!</h5>
+    <h5 class="page-info">Here's are your rooms!</h5>
 
     <div class="row" id="button_row">
-        <a href="{% url 'items:index' %}" class="btn btn-primary">See Items</a>
-        <a href="{% url 'items:locations' %}" class="btn btn-primary">See Locations</a>
-        <a href="{% url 'items:create_room' %}" class="btn btn-warning"><i class="fas fa-plus"></i> Add Room</a>
+        <a href="{% url 'items:index' %}" class="btn btn-primary">Items</a>
+        <a href="{% url 'items:locations' %}" class="btn btn-primary">Locations</a>
+        <a href="{% url 'items:rooms' %}" class="btn btn-primary active">Rooms</a>
+        <a href="{% url 'items:create_item' %}" class="btn btn-warning"><i class="fas fa-plus"></i> Add Item</a>
     </div>
 
     {% for room in room_list %}

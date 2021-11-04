@@ -2,12 +2,13 @@
 
 {% block body %}
     <h2 class="page-info">Your Locations</h2>
-    <h5 class="page-info">Here's where you can manage the different locations in each of your rooms!</h5>
+    <h5 class="page-info">Here are the different locations in each of your rooms!</h5>
 
     <div class="row" id="button_row">
-        <a href="{% url 'items:index' %}" class="btn btn-primary">See Items</a>
-        <a href="{% url 'items:rooms' %}" class="btn btn-primary">See Rooms</a>
-        <a href="{% url 'items:create_location' %}" class="btn btn-warning"><i class="fas fa-plus"></i> Add Location</a>
+        <a href="{% url 'items:index' %}" class="btn btn-primary">Items</a>
+        <a href="{% url 'items:locations' %}" class="btn btn-primary active">Locations</a>
+        <a href="{% url 'items:rooms' %}" class="btn btn-primary">Rooms</a>
+        <a href="{% url 'items:create_item' %}" class="btn btn-warning"><i class="fas fa-plus"></i> Add Item</a>
 
         <button class="btn btn-success dropdown-toggle" type="button" id="sortDropdownButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Sort

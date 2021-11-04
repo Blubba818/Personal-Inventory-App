@@ -3,8 +3,9 @@
 {% block body %}
 <form id="delete_form" method="POST">
     {% csrf_token %}
-    <h2>Are you sure you want to delete {{ location.name }}?</h2>
+
     <div class="row">
+        <h2>Are you sure you want to delete {{ location.name }}?</h2>
         <button class="btn btn-danger" id="confirm_button" type="submit">Yes</button>
         <a class="btn btn-success" id="cancel_button" href="{% url 'items:index' %}">No</a>
     </div>

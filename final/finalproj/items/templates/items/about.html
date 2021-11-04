@@ -1,0 +1,13 @@
+{% extends 'items/base.html' %}
+
+{% block body %}
+    <h2 class="page-info">Hello! Welcome to your item inventory!</h2>
+    <a href="{% url 'items:index' %}" class="btn btn-primary">See Your Inventory</a>
+    <div class="row about">
+        <h5>Most of us know where we keep things like our phones, keys, and wallets, but what about the things we don't use every day?</h5>
+        <h5>That's where this app comes in. All you need to do is enter items into your inventory along with a location for that item.</h5>
+        <h5>Add rooms such as the kitchen, your bedroom, etc. and locations such as a closet or the underside of your bed.</h5>
+        <h5>The details are up to you!</h5>
+        <h5>With this app, you will never have to search your whole house for that old photo album ever again!</h5>
+    </div>
+{% endblock %}

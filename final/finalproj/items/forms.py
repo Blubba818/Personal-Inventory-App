@@ -14,17 +14,24 @@ class ItemForm(forms.ModelForm):
             'quantity': 'Item Quantity',
             'location_id': 'Location'
         }
+        widgets = {
+            'description': forms.Textarea(attrs={'cols': 80, 'rows': 10}),
+        }
 
 
 class LocationForm(forms.ModelForm):
 
     class Meta:
         model = Location
-        fields = ['name', 'image', 'room_id']
+        fields = ['name', 'image', 'room_id', 'description']
         labels = {
             'name': 'Location Name',
             'image': 'Location Image',
+            'description': 'Location Description',
             'room_id': 'Room'
+        }
+        widgets = {
+            'description': forms.Textarea(attrs={'cols': 80, 'rows': 10}),
         }
 
 
@@ -32,8 +39,12 @@ class RoomForm(forms.ModelForm):
 
     class Meta:
         model = Room
-        fields = ['name', 'image']
+        fields = ['name', 'image', 'description']
         labels = {
             'name': 'Room Name',
-            'image': 'Room Image'
+            'image': 'Room Image',
+            'description': 'Room Description'
+        }
+        widgets = {
+            'description': forms.Textarea(attrs={'cols': 80, 'rows': 10}),
         }

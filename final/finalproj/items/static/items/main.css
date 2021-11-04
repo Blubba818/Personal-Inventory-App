@@ -1,5 +1,5 @@
 body {
-    background: linear-gradient(rgba(255,255,255,.9), rgba(255,255,255,.25), rgba(255,255,255,.9)), url("../../media/images/bg.png") no-repeat center fixed;
+    background: linear-gradient(rgba(255,255,255,.9), rgba(255,255,255,.25), rgba(255,255,255,.9)), url("./bg.png") no-repeat center fixed;
     background-size: cover;
 }
 
@@ -20,7 +20,7 @@ h4, h5, h6, p {
 }
 
 nav {
-    background: linear-gradient(to right, #e78b38, #f5ce89, #f1a34f);
+    background: linear-gradient(to right, #00b386, #00cc99, #00b386);
     width: 100%;
     margin: 0 auto;
 }
@@ -41,6 +41,10 @@ nav {
     width: 80%;
     margin: 0 auto;
     color: white;
+}
+
+.about h5 {
+    margin-top: 1rem;
 }
 
 .page-info {
@@ -75,7 +79,7 @@ img {
     display: flex;
     justify-content: space-around;
     flex-direction: row;
-    background: linear-gradient(to right, rgba(0,204,153,.35), rgba(0,204,153,.75), rgba(0,204,153,.8), rgba(0,204,153,.75), rgba(0,204,153,.35));
+    background: linear-gradient(to right, rgba(0,204,153,.75),rgba(0,204,153,1),rgba(0,204,153,.75));
     border-radius: 10px;
 }
 
@@ -158,6 +162,11 @@ input, select {
     border: none;
 }
 
+textarea {
+    border-radius: 5px;
+    border: none;
+}
+
 .btn {
     border: none !important;
     box-shadow: 2px 2px 2px rgba(0,51,38,.25);
@@ -173,7 +182,7 @@ input, select {
     color: white !important;
 }
 
-.btn-primary:active {
+.btn-primary:active, .active {
     background-color: #007399 !important;
     color: white !important;
 }
@@ -237,6 +246,20 @@ input, select {
 
 #delete_form a:active {
     color: white !important;
+}
+
+span.helptext {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+span.helptext ul {
+    margin: 0;
+}
+
+.errorlist {
+    color: #cc2500;
+    margin: 0;
 }
 
 @media (max-device-width: 768px) {

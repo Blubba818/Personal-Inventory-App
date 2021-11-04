@@ -4,6 +4,7 @@ from django.urls import path
 app_name = 'items'
 urlpatterns = [
     path('', views.index, name='index'),
+    path('about', views.about, name='about'),
     path('location', views.locations, name='locations'),
     path('room', views.rooms, name='rooms'),
     path('sort/<sort_by>', views.index_sorted, name='index_sorted'),

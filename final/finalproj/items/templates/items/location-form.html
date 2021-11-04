@@ -4,10 +4,11 @@
     <div class="row">
         <form method="POST" enctype="multipart/form-data">
             <h2>Add/Edit Location</h2>
-            <a href="{% url 'items:create_room' %}" class="btn btn-primary" target="_blank"><i class="fas fa-plus"></i> Add Room</a>
             {% csrf_token %}
-            {{ form }}
+            {{ location_form }}
+            <a class="btn btn-warning" href="{% url 'items:create_room' %}"><i class="fas fa-plus"></i> Add New Room</a>
             <button class="btn btn-primary" type="submit">Save</button>
+            <button class="btn btn-success" onClick="history.back()">Back</button>
         </form>
     </div>
 {% endblock %}

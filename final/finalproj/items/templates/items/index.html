@@ -2,11 +2,12 @@
 
 {% block body %}
     <h2 class="page-info">Your Items</h2>
-    <h5 class="page-info">Here's where you can manage the items in your inventory!</h5>
+    <h5 class="page-info">Here are the items in your inventory!</h5>
 
     <div class="row" id="button_row">
-        <a href="{% url 'items:locations' %}" class="btn btn-primary">See Locations</a>
-        <a href="{% url 'items:rooms' %}" class="btn btn-primary">See Rooms</a>
+        <a href="{% url 'items:index' %}" class="btn btn-primary active">Items</a>
+        <a href="{% url 'items:locations' %}" class="btn btn-primary">Locations</a>
+        <a href="{% url 'items:rooms' %}" class="btn btn-primary">Rooms</a>
         <a href="{% url 'items:create_item' %}" class="btn btn-warning"><i class="fas fa-plus"></i> Add Item</a>
 
         <button class="btn btn-success dropdown-toggle" type="button" id="sortDropdownButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
